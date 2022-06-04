@@ -93,7 +93,7 @@ namespace myAspApiTest.Controllers
                     reader.Close();
                     connnection.Close();
                 }
-                return new JsonResult(table);
+                return new JsonResult("Create Successful");
             }
         }
 
@@ -183,7 +183,6 @@ namespace myAspApiTest.Controllers
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@id", id);
-
                     MySqlDataReader reader = command.ExecuteReader();
                     table.Load(reader);
 
